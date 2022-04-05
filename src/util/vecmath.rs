@@ -60,6 +60,18 @@ impl ops::Mul<f64> for Vector2i {
     }
 }
 
+impl ops::Mul<Vector2i> for f64 {
+    type Output = Vector2i;
+
+    fn mul(self, rhs: Vector2i) -> Vector2i {
+        debug_assert!(!self.is_nan());
+        Vector2i {
+            x: (rhs.x as f64 * self) as i64,
+            y: (rhs.y as f64 * self) as i64,
+        }
+    }
+}
+
 impl ops::MulAssign<f64> for Vector2i {
     fn mul_assign(&mut self, rhs: f64) {
         debug_assert!(!rhs.is_nan());
@@ -97,4 +109,41 @@ impl ops::Neg for Vector2i {
             y: -self.y,
         }
     }
+}
+
+impl Vector2i {
+    pub fn abs(self) -> Self {
+        Self {
+            x: self.x.abs(),
+            y: self.y.abs(),
+        }
+    }
+
+    pub fn lerp(self, other: Self, t: f64) -> Self {
+        (1. - t) * self + t * other
+    }
+
+    pub fn componentwise_min(self, other: Self) -> Self {
+        Self {
+            x: self.x.min(other.x),
+            y: self.y.min(other.y),
+        }
+    }
+}
+
+pub struct Vector2f {
+    pub x: f64,
+    pub y: f64,
+}
+
+pub struct Vector3i {
+    pub x: i64,
+    pub y: i64,
+    pub z: i64,
+}
+
+pub struct Vector3f {
+    pub x: f64,
+    pub y: f64,
+    pub z: f64,
 }
