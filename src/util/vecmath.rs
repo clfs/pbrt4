@@ -147,3 +147,25 @@ pub struct Vector3f {
     pub y: f64,
     pub z: f64,
 }
+
+pub struct Point2i {
+    pub x: i64,
+    pub y: i64,
+}
+
+pub struct Point2f {
+    pub x: f64,
+    pub y: f64,
+}
+
+pub struct Point3i {
+    pub x: i64,
+    pub y: i64,
+    pub z: i64,
+}
+
+pub struct Point3f {
+    pub x: f64,
+    pub y: f64,
+    pub z: f64,
+}
