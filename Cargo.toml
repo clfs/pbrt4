@@ -1,0 +1,8 @@
+[package]
+name = "pbrt4"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "pbrt"
+path = "src/bin/pbrt.rs"
