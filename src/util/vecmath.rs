@@ -142,6 +142,7 @@ pub struct Vector3i {
     pub z: i64,
 }
 
+#[derive(Default)]
 pub struct Vector3f {
     pub x: f64,
     pub y: f64,
@@ -168,4 +169,56 @@ pub struct Point3f {
     pub x: f64,
     pub y: f64,
     pub z: f64,
+}
+
+pub struct Normal3f {
+    pub x: f64,
+    pub y: f64,
+    pub z: f64,
+}
+
+pub struct Quaternion {
+    pub x: f64,
+    pub y: f64,
+    pub z: f64,
+    pub w: f64,
+}
+
+pub struct Bounds2i {
+    pub p_min: Point2i,
+    pub p_max: Point2i,
+}
+
+pub struct Bounds2f {
+    pub p_min: Point2f,
+    pub p_max: Point2f,
+}
+
+pub struct Bounds3i {
+    pub p_min: Point3i,
+    pub p_max: Point3i,
+}
+
+pub struct Bounds3f {
+    pub p_min: Point3f,
+    pub p_max: Point3f,
+}
+
+pub struct OctohedralVector {
+    #[allow(dead_code)]
+    x: u16,
+    #[allow(dead_code)]
+    y: u16,
+}
+
+pub struct DirectionCone {
+    pub w: Vector3f,
+    pub cos_theta: f64,
+}
+
+#[derive(Default)]
+pub struct Frame {
+    pub x: Vector3f,
+    pub y: Vector3f,
+    pub z: Vector3f,
 }
